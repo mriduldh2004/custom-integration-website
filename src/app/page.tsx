@@ -1,29 +1,59 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <div className="text-center sm:text-left">
+          <h1 className="text-4xl font-bold mb-4">Writesonic Analytics Demo</h1>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
+            This Next.js application demonstrates server-side analytics integration with Writesonic.
+          </p>
+        </div>
+
+        <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
+          <h2 className="text-xl font-semibold mb-3 text-blue-800 dark:text-blue-200">
+            Analytics Integration Status
+          </h2>
+          <div className="space-y-2 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>Middleware installed</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>Analytics client configured</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+              <span>API key required for production</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-4xl">
+          <Link href="/about" className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <h3 className="font-semibold mb-2">About Page</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Test analytics tracking on a simple page
+            </p>
+          </Link>
+          
+          <Link href="/products" className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <h3 className="font-semibold mb-2">Products Page</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Another page to test navigation tracking
+            </p>
+          </Link>
+
+          <Link href="/api-test" className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <h3 className="font-semibold mb-2">API Testing</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Test API endpoint analytics tracking
+            </p>
+          </Link>
+        </div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
