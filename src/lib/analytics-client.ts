@@ -155,8 +155,8 @@ export function getAnalyticsClient(): WritesonicAnalyticsClient {
   if (!analyticsClient) {
     const config: AnalyticsConfig = {
       apiKey: process.env.WRITESONIC_API_KEY || '',
-      ingestionUrl: process.env.WRITESONIC_INGESTION_URL || 'https://ingestion.writesonic.com/api/v1/analytics/ingest/',
-      enableInDev: process.env.ENABLE_ANALYTICS_IN_DEV === 'true',
+      ingestionUrl: 'https://ingestion.writesonic.com/api/v1/analytics/ingest/',
+      enableInDev: true,
     };
     
     analyticsClient = new WritesonicAnalyticsClient(config);
